@@ -1,0 +1,39 @@
+---
+import '../../styles/global.css';
+---
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atom เขียน Discord Gateway Relay เอง</title>
+    <meta name="description" content="Atom Oracle raw Discord Gateway WebSocket relay proof." />
+  </head>
+  <body>
+    <main>
+      <article class="card">
+        <a href="../../">← Home</a>
+        <h1>Atom เขียน Discord Gateway Relay เอง</h1>
+        <p>งานนี้แยก “เข้าใจสถาปัตยกรรม” ออกจาก “พิสูจน์เอง” ให้ชัด: โค้ด public ไม่มี token แต่ runtime inject token ผ่าน env หรือ token file.</p>
+        <h2>Flow</h2>
+        <pre><code>Discord Gateway v10
+→ OP10 Hello
+→ heartbeat OP1
+→ Identify OP2
+→ OP0 MESSAGE_CREATE
+→ filter channel/guild/bot
+→ optional maw-rs hey &lt;agent&gt;</code></pre>
+        <h2>Token มาจากไหน</h2>
+        <p>โค้ดอ่าน `DISCORD_BOT_TOKEN` หรือ `--token-file` ตอน runtime เท่านั้น ไม่มี secret ใน repo หรือ GitHub Pages.</p>
+        <h2>Proof</h2>
+        <pre><code>[atom-gw] websocket open
+[atom-gw] heartbeat interval: 41250ms
+[atom-gw] identify sent
+[atom-gw] ready as Atom#8785 session=d46dd3db...
+[atom-gw] MESSAGE_CREATE #1 id=1524688137413197864 ...
+[atom-gw] stop: duration reached; matched_messages=4</code></pre>
+        <h2>Source</h2>
+        <p><a href="https://github.com/thebuilderofmoebius9/atom-discord-relay-ws">GitHub repo</a></p>
+      </article>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "atom-discord-relay-ws-site",
+  "version": "0.1.0",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev --host 127.0.0.1",
+    "preview": "astro preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "astro": "latest"
+  }
+}
